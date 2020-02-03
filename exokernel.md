@@ -31,3 +31,8 @@ Nemesis与EXo具有很多相似之处，不同的是设计目标具有很大差�
   从另一个角度来看，代码下载提供了了一种跨越用户信任边界的语义推送方式。这对于外核心系统而言更为重要。通过将系统代码移入库中，外核也一走了理解资源语义的代码，因此丧失了保护资源的功能。
   共享抽象层次：
   互信任。单向信任。互不信任。
+  As an example, consider the problem of writing cached disk blocks to stable storage in a way that guarantees
+consistency across reboots. Rather than an exokernel deciding on a particular write ordering and having to struggle
+with the associated tradeoffs in scheduling heuristics and caching decisions required, it can instead allow the application
+to construct schedules, retaining for the much simpliﬁed task of merely checking that any application schedule gives
+appropriate consistency guarantees. 
