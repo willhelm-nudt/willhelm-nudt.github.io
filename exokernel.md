@@ -36,3 +36,11 @@ consistency across reboots. Rather than an exokernel deciding on a particular wr
 with the associated tradeoffs in scheduling heuristics and caching decisions required, it can instead allow the application
 to construct schedules, retaining for the much simpliﬁed task of merely checking that any application schedule gives
 appropriate consistency guarantees. 
+Because libOSes understand the higher-level semantics of their abstractions, they “just know” many things that an
+exokernel does not. For example, that related ﬁles will likely be clustered together and if one block is fetched, the
+succeeding eight blocks should be as well. Thus, a variant of the above methodology is designing interfaces where
+actions do not require justiﬁcation. As an example, consider the act of fetching a disk block in core. If a ﬁle system
+must present credentials before the kernel will allow the fetch to be initiated, then it faces serious problems doing
+the prefetching it needs, since it would ﬁrst have to read in all ﬁle directory entries, show each ﬁle's capability to the
+kernel, and only then initiate the fetches. In contrast, by only performing access control when the actual data in the
+block or read or written, rather then when the block is fetched, these disk reads can be initiated all at once.
