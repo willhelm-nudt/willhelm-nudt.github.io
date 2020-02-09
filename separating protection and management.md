@@ -20,4 +20,17 @@ Flexibility:applications have the freedom to customize them for their own purpos
 
 Efficiency:The dedication of the management layer eliminates the requirement of implementing security isolation,enabling many performance optimization opportunities that are hard to implement when isolation is required.
 
-Limitations
+**Limitations**
+
+The protection layer does not provide high-level abstractions.Mutiple management components need collaboration to maintain a consistent and secure abstraction,which increase system complexity.
+
+Anothor problem is that security isolation boundaries among different management components can incur performance overhead.Further research is required to provide a general guideline for addressing the trade-off.
+
+#Library Cloud
+
+**Abstraction**
+LC abstraction is conceptually similar to Library OS:users and applications get control over a full cloud software stack and can custmoize it for their own purpose;the underlying cloud provideers only need to provide basic resource multiplexing and isolation.The LC extends the notion of Library OS:a single Library Cloud can span across multiple cloud providers.
+
+Applications running in a Library Cloud interact using a _Library Cloud API_ that can be much richer than a typical cloud API.Typical Cloud API methods include creating VMs and managing networks,extensions include live VM migration,consolidation,checkpointing,and dynamic scaling.
+### Innovations Enabled by the LC
+**Follow the Sun**
