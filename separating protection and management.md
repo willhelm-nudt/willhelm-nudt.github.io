@@ -19,3 +19,5 @@ Security:simple and small protection layer,security isolation is easier to verif
 Flexibility:applications have the freedom to customize them for their own purpose without affecting others or compromising security isolation.
 
 Efficiency:The dedication of the management layer eliminates the requirement of implementing security isolation,enabling many performance optimization opportunities that are hard to implement when isolation is required.
+
+Limitations
