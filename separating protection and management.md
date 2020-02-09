@@ -1,6 +1,7 @@
 # Abstract
-研究如何在云基础设施中提供灵活性和效率以及强大的安全性。
 
-该项目解决了云基础设施中的两个重要平台：容器和IaaS。IaaS支持互不信任用户之间的云资源的安全共享，但不能提供足够的灵活性和效率。底层虚拟化平台启用的许多强大的管理原语对用户是隐藏的，例如实时虚拟机迁移和整合。
+Investigates the question of how to offer flexibility and efficiency as well as strong security in cloud infrastructure. This project addresses two important platforms in cloud infrastructures:the containers and the IaaS.Iaas suports secure sharing of cloud resources among mutually untrusted users,but does not provide sufficient flexibility and effiency.Many powerful management primitives enabled by the underlying virtualization platform are hidden from users,such as live virtual machine migration and consolidation.
 
-库云library cloud是一种新的抽象，能够在不破坏不同用户之间的安全隔离的前提下，实现更灵活和高效的用户级云资源管理。这些系统代表着安全、灵活、高效的云基础设施的重要步骤。
+Library Cloud is a new abstraction that enables more flexible and efficient user-level cloud resource management without breaking security isolation between different users.Together,these systems represent important steps towards secure,flexible,and efficient cloud infrastructure.
+
+
