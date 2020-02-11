@@ -34,3 +34,9 @@ LC abstraction is conceptually similar to Library OS:users and applications get 
 Applications running in a Library Cloud interact using a _Library Cloud API_ that can be much richer than a typical cloud API.Typical Cloud API methods include creating VMs and managing networks,extensions include live VM migration,consolidation,checkpointing,and dynamic scaling.
 ### Innovations Enabled by the LC
 **Follow the Sun**
+
+**Dynamic Resource Scheduling**
+
+_Supercloud Dynamic Resource Scheduling_ minimize cost without compromising applications performance or changing application configuration.
+_SDRS_ 
+实现了虚拟机
