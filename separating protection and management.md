@@ -39,4 +39,8 @@ Applications running in a Library Cloud interact using a _Library Cloud API_ tha
 
 _Supercloud Dynamic Resource Scheduling_ minimize cost without compromising applications performance or changing application configuration.
 _SDRS_ 
-实现了虚拟机
+实现了虚拟机监视器级别的机制，包括VM迁移，CPU capping，memory ballooning,page sharing.I/Othrotting，提高了资源贡献效率，还保证不同的VM不会影响到彼此。当负载增加是，嵌套VM迁移到独立的VM来为更强大的应用提供支持。
+
+##Smart Spot Instance
+
+将VM迅速迁移到最便宜且最可用的地点。
