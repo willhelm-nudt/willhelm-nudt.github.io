@@ -1,4 +1,26 @@
 # THE PAL ABI
 
 _Platform Translation Layer_
+
 Graphene目前在PAL ABI中定义了40个调用，足以支撑library OS开发所需要的主机抽象。本文中PAL ABI的主机**host**是一个OS或者一个Hypervisor这类可以支持应用程序运行的功能集合。
+
+**Porting Simiplicity**
+
+1.reduce size and complexity of host OS features that OS developers have to implement.
+
+2.PAL ABI模仿类似POSIX 宏核OS的通用系统API，将调用直接转换成类似的主机抽象。例如，StreamRead()和StreamWrite()与Linux等系统的read()和write() 以及windows 系统的readfile()和writefile()类似。
+
+**Sufficiency for Library OS Development**
+
+简化语义相同，抽象类似的函数。例如VirtMemAlloc()与mmap()的功能相同，可以同时满足mmap()和brk()两个函数的功能。
+
+**Migration**
+
+Library OS保留 检查点和转移运行中的应用的VM具有的特性。进程转移是模拟写时拷贝分支的一个关键。
+### PAL 调用定义
+
+_Streams_,_Memory_,_Threads & scheduling_,_Process_,_Miscellaneous_,_RPC_
+
+### Host-Enforced Security Isolation
+
+同一个主机上运行的互不可信应用需要强隔离。对于可信的主机OS，可以将安全隔离交给主机代理。
