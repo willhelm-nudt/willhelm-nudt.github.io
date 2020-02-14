@@ -24,3 +24,19 @@ _Streams_,_Memory_,_Threads & scheduling_,_Process_,_Miscellaneous_,_RPC_
 ### Host-Enforced Security Isolation
 
 同一个主机上运行的互不可信应用需要强隔离。对于可信的主机OS，可以将安全隔离交给主机代理。
+
+同一个应用中的进程在一个沙箱中运行。多个OS库实例在一个沙箱内协同运行，从应用程序角度来看是一个统一的系统。阻挡沙箱之间的RPC流来控制。
+
+**Thread Model**
+
+## The library OS
+### Architecture
+### Multi-Process Abstractions
+
+ex:PID,对单进程应用来说，getpid()返回的确定的值。
+采用的基本抽象：将每一个LOS实例看做一个进程，在一组LOS中共享POSIX实现。（treat each library OS instance as a process and distribute the shared POSIX implementation across a collection of library OSes.）
+multiple library OSes in multiple picoprocess collaborate to implement shared abstractions.pipe like RPC streams to communicate betwenn processes.
+
+# The Host ABI
+## PAL Calling Convention
+
