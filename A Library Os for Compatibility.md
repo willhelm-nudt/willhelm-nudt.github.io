@@ -39,4 +39,29 @@ multiple library OSes in multiple picoprocess collaborate to implement shared ab
 
 # The Host ABI
 ## PAL Calling Convention
+partially adopt x86-64 Linux convention to simplyfy the dynamic link between the application,library OS and PAL.
+
+**Host Differences**
+PAL tranlates the calling convention between the host ABI and a system interface on the host.also resolve calling convention inconsistency.
+
+**Error Code**
+a PAL delivers the failure of a PAL call as an exception,so that the library OS can assign a handler to capture the failure.
+
+**Dynamic Linking vs Static Linking**
+
+ensure complete reuse of an unmodified application,as well as unmodified library OS.without modification and recompilation.
+
+## The PAL ABI
+
+### Stream I/O
+
+(1)storage (2)network (3)RPC
+抽象：byte stream
+### Page Management
+抽象：虚拟内存区域 virtual memory area(VMA)
+
+两种方式：a file-backed VMA,created by StreamMap();an anonymous VMA,created by VirtMemAlloc()
+
+
+
 
