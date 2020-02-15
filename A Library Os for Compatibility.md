@@ -70,6 +70,14 @@ _creating or terminating a thread_,_scheduing a thread_,_scheduling primitives_,
 
 ### Process
 
+```
+HANDLE ProcessCreate(const char *application_uri,
+                     
+                     const char *manifest_uri,
+                     
+                     const char **args,uint flags);
+```
+
 
 
 
