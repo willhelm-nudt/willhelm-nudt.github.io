@@ -62,6 +62,15 @@ ensure complete reuse of an unmodified application,as well as unmodified library
 
 两种方式：a file-backed VMA,created by StreamMap();an anonymous VMA,created by VirtMemAlloc()
 
+### CPU Scheduling
+
+focus on defining host ABIs for CPU scheduling features essential to application usability.
+
+_creating or terminating a thread_,_scheduing a thread_,_scheduling primitives_,_waiting for scheduling events_,_thread-local storage_
+
+### Process
+
+
 
 
 
