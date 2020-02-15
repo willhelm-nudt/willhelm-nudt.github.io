@@ -95,32 +95,59 @@ bool SandboxSetPolicy(const char *menifest_uri,
 **the comparison with alternative approaches**
 regarding resource management,Exokernel and graphene have made different decisions for the division of labor between the host and library os.Exokernel prioritizes the efficiency of resource management for each application.To eliminate the overhead of multiplexing resources,Exokernel exports the low-level hardware primitives,including physical memory,CPU,disks,TLB and page tables.Each library OS in Exokernel contains drivers to directly interfacing these hardware primitives.Graphene,on the other hand,prioritizes compatiblity upon plenty of host OS and hardware platforms.Compared with the primitives exported by Exokernel,the PAL ABI of Graphene defines abstractions that are much more high-level and independent from the host OSes,such as files,virtual memory area,and network sockets.Graphene sacrifices the application-specific opportunities for optimizing the resource management,but ensures the compatibility upon any hosts with the PAL ABI.
 ### File Systems
+
 #### a chroot file system
+
 #### guest-level file system
+
 #### a virtual file system
+
 ### network sockets
+
 ### virtual address space
+
 ### threads
+
 ## multi-process applications
+
 ### forking a process
+
 ### process creation with executables
+
 ## coordinatiing guest os states
+
 ### building blocks
+
 ### examples and discussion
+
 **Signals and Exit notification**
+
 **System V IPC**
+
 **System V IPC Message Queues**
+
 **System V IPC Semophore**
+
 **Shared File Descriptors**
+
 **Shared File System States**
+
 **Shared Memory**
+
 **Failure and Disconnection Tolerance**
+
 **Reader Recovery**
+
 ### Lessons Learned
+
 **Service Requests From Local State Whenever Possible**
+
 **Lazy Discovery and Caching Improve Performance**
+
 **Batched Allocation of Names Minimizes Leader Workload**
+
 **Prioritize Pairwise Coordination Within a Sandbox**
+
 **Make RPCs Asynchronous Whenever Possible**
 
 
