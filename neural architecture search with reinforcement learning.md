@@ -12,4 +12,4 @@ controller RNN的参数是 θ<sub>c</sub>，优化的目标是最大化期望验
 
 **强化训练**
 
-_J_(_θ_<sub>c<sub>)=E<sub>P(α<sub>1:T<sub>;θ<sub>c<sub>)<sub>[_R_]
+_J_(_θ_<sub>c</sub>)=E<sub>P(α<sub>1:T</sub>;θ<sub>c</sub>)</sub>[_R_]
