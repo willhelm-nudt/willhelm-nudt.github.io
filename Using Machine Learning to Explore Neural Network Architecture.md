@@ -1,15 +1,15 @@
 At Google, we have successfully applied deep learning models to many applications, from image recognition to speech recognition to machine translation. Typically, our machine learning models are painstakingly designed by a team of engineers and scientists. This process of manually designing machine learning models is difficult because the search space of all possible models can be combinatorially large — a typical 10-layer network can have ~1010 candidate networks! For this reason, the process of designing networks often takes a significant amount of time and experimentation by those with significant machine learning expertise.
-![1.1](https://github.com/willhelm-nudt/photo/blob/master/imange2.png)
+![1.1](https://github.com/willhelm-nudt/photo/blob/master/image2.png)
 
 To make this process of designing machine learning models much more accessible, we’ve been exploring ways to automate the design of machine learning models. Among many algorithms we’ve studied, evolutionary algorithms [1] and reinforcement learning algorithms [2] have shown great promise. But in this blog post, we’ll focus on our reinforcement learning approach and the early results we’ve gotten so far.
 
 In our approach (which we call "AutoML"), a controller neural net can propose a “child” model architecture, which can then be trained and evaluated for quality on a particular task. That feedback is then used to inform the controller how to improve its proposals for the next round. We repeat this process thousands of times — generating new architectures, testing them, and giving that feedback to the controller to learn from. Eventually the controller learns to assign high probability to areas of architecture space that achieve better accuracy on a held-out validation dataset, and low probability to areas of architecture space that score poorly. Here’s what the process looks like:
-![1.2](https://github.com/willhelm-nudt/photo/blob/master/imange3.png)
+![1.2](https://github.com/willhelm-nudt/photo/blob/master/image3.png)
 
 We’ve applied this approach to two heavily benchmarked datasets in deep learning: image recognition with CIFAR-10 and language modeling with Penn Treebank. On both datasets, our approach can design models that achieve accuracies on par with state-of-art models designed by machine learning experts (including some on our own team!).
 
 So, what kind of neural nets does it produce? Let’s take one example: a recurrent architecture that’s trained to predict the next word on the Penn Treebank dataset. On the left here is a neural net designed by human experts. On the right is a recurrent architecture created by our method:
-![1.3](https://github.com/willhelm-nudt/photo/blob/master/imange1.png)
+![1.3](https://github.com/willhelm-nudt/photo/blob/master/image1.png)
 
 The machine-chosen architecture does share some common features with the human design, such as using addition to combine input and previous hidden states. However, there are some notable new elements — for example, the machine-chosen architecture incorporates a multiplicative combination (the left-most blue node on the right diagram labeled “elem_mult”). This type of combination is not common for recurrent networks, perhaps because researchers see no obvious benefit for having it. Interestingly, a simpler form of this approach was recently suggested by human designers, who also argued that this multiplicative combination can actually alleviate gradient vanishing/exploding issues, suggesting that the machine-chosen architecture was able to discover a useful new neural net architecture.
 
