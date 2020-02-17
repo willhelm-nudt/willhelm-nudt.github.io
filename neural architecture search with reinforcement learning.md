@@ -7,7 +7,7 @@ neural architecture search,a _gradient-based_ method for finding good architectu
 **概述**
 超参数包括：filter height,filter width,stride height,stride width,number of filters.每一层都会预测这几个参数。每个预测通过softmax分类器，作为下一步的输入。
 
-controller RNN的参数是 θ<sub>c<sub>，优化的目标是最大化期望验证精度。
+controller RNN的参数是 θ<sub>c</sub>，优化的目标是最大化期望验证精度。
 
 
 **强化训练**
