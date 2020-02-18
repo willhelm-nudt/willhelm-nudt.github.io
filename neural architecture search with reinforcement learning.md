@@ -35,6 +35,14 @@ R不可微，为了更新 _θ_<sub>c</sub>，我们采用[williams,1992](https:/
 
 P(Layer j is an input layer i)=sigmoid(v<sup>T</sup> tanh(W<sub>prev</sub>*h<sub>j</sub>+W<sub>curr</sub>*h<sub>i</sub>))
 
+h<sub>j</sub>表示第j层的锚点控制器的隐含状态，在这些sigmoid中抽样来决定哪些前层可以作为当前层的输入。Wp、Wc以及v是训练参数。由于连接也是概率分布，因此RENINFORCE方法不需要过多改动。
+
+该模型没有预测学习率，并且假设所有层都是卷积层。这些参数的预测也可以进行。需要增加一些额外的步骤来预测层的类型，及其超参数。
+
+## 生成递归细胞结构 recurrent cell architecture
+
+在每个时间步 _t_ ,控制器需要找到关于h<sub>t</sub>的实用函数，输入包括x<sub>t</sub>和h<sub>t-1</sub>.
+
 
 ```
 [williams 1992]Simple statistical gradient-following algorithm for connectionist reinforcement learning.
