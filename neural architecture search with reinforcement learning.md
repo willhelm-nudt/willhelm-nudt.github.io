@@ -18,7 +18,7 @@ REward Increment = Nonnegative Factor x Offset Reinforcement x Characteristic El
 
 _J_(_θ_<sub>c</sub>)=E<sub>P(α<sub>1:T</sub>;θ<sub>c</sub>)</sub>[_R_]
 
-R不可微，我们采用[williams,1992](https://cloud.tencent.com/developer/article/1361122)提出的强化方法及其近似。
+R不可微，为了更新 _θ_<sub>c</sub>，我们采用[williams,1992](https://cloud.tencent.com/developer/article/1361122)提出的强化方法及其近似。
 公式分别为
 
 ![origin](https://github.com/willhelm-nudt/photo/blob/master/williams92.png)
@@ -29,7 +29,11 @@ R不可微，我们采用[williams,1992](https://cloud.tencent.com/developer/art
 
 ![approximate1](https://github.com/willhelm-nudt/photo/blob/master/approx1.png)
 
+为了加速训练过程，需要并行处理以及异步更新。
 
+为了扩大搜索空间，让controller允许跳过连接或者层分支branching layers.为了预测连接情况，引入一种注意力机制attention mechanism，叫做[set-selection type attention](https://arxiv.org/abs/1511.04834),在第N层，增加一个锚点，包含N-1 content-based sigmoids来表示与之相连的层。sigmoid函数如下：
+
+P(Layer j is an input layer i)=sigmoid(v<sup>T<\sup> tanh(W<sub>prev<\sub>*h<sub>j<\sub>+W<sub>curr<\sub>*h<sub>i<\sub>))
 
 
 ```
