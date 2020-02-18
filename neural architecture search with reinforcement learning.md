@@ -33,7 +33,7 @@ R不可微，为了更新 _θ_<sub>c</sub>，我们采用[williams,1992](https:/
 
 为了扩大搜索空间，让controller允许跳过连接或者层分支branching layers.为了预测连接情况，引入一种注意力机制attention mechanism，叫做[set-selection type attention](https://arxiv.org/abs/1511.04834),在第N层，增加一个锚点，包含N-1 content-based sigmoids来表示与之相连的层。sigmoid函数如下：
 
-P(Layer j is an input layer i)=sigmoid(v<sup>T<\sup> tanh(W<sub>prev<\sub>*h<sub>j<\sub>+W<sub>curr<\sub>*h<sub>i<\sub>))
+P(Layer j is an input layer i)=sigmoid(v<sup>T tanh(W<sub>prev<\sub>*h<sub>j<\sub>+W<sub>curr<\sub>*h<sub>i<\sub>))
 
 
 ```
