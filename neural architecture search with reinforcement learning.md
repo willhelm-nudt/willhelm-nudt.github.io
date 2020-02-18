@@ -15,6 +15,11 @@ controller RNN的参数是 θ<sub>c</sub>，优化的目标是最大化期望验
 _J_(_θ_<sub>c</sub>)=E<sub>P(α<sub>1:T</sub>;θ<sub>c</sub>)</sub>[_R_]
 
 R不可微，我们采用[williams,1992](https://cloud.tencent.com/developer/article/1361122)提出的强化方法及其近似。
+公式分别为
+![origin](https://github.com/willhelm-nudt/photo/blob/master/williams92.png)
+![approximate](https://github.com/willhelm-nudt/photo/blob/master/approx.png)
+上述公式是一个无偏估计，但是方差太大，因此加入一个b
+![approximate1](https://github.com/willhelm-nudt/photo/blob/master/approx1.png)
 
 
 ```
