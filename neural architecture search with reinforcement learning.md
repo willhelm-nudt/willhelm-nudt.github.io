@@ -13,3 +13,11 @@ controller RNN的参数是 θ<sub>c</sub>，优化的目标是最大化期望验
 **强化训练**
 
 _J_(_θ_<sub>c</sub>)=E<sub>P(α<sub>1:T</sub>;θ<sub>c</sub>)</sub>[_R_]
+
+R不可微，我们采用[williams,1992](https://cloud.tencent.com/developer/article/1361122)提出的强化方法及其近似。
+
+
+```
+[williams 1992]Simple statistical gradient-following algorithm for connectionist reinforcement learning.
+```
+
