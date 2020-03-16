@@ -9,5 +9,6 @@ VMS是一种契约，contact,足够精确的描述分子实现的功能，同时
 
 **构件={content,behavior,signature,composition,context,publisher,implementation}**
 content是功能和非功能的静态描述，通过服务项和服务项关系表现构件的目的和作用。
-__content=cont_time x con_relation x (FUNTION U NONFUNCTION)__
+_content=cont_time x con_relation x (FUNTION U NONFUNCTION)_
+
 
